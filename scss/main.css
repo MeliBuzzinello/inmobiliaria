@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  width: 200px;
+  margin: 25px 50px;
+}
+
+.nav_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav_flex .navbar {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
+.titulo {
+  margin: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
