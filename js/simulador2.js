@@ -1,67 +1,73 @@
-let tipoOperacion = prompt("Ingrese tipo de operacion ALQUILER / COMPRA")
-
-function Propiedad (precio){
-this.precio = precio,
-this.escritura = function(precio) {(precio * 0.1) * 0.07}
-this.comision = function(precio , porcentaje) {precio * porcentaje}
+class Propiedad {
+    constructor(tipo, precio, cantAmbiente, operacion, zona, estado) {
+        this.tipo = tipo
+        this.precio = parseInt(precio)
+        this.cantAmbiente = cantAmbiente
+        this.operacion = operacion
+        this.zona = zona
+        this.estado = estado
+    }
 }
+
+const arrayPropiedad = [new Propiedad("duplex", 290000, "3", "venta", "Calamuchita", "disponible"),
+new Propiedad("terreno", 10000, 0, "venta", "Calamuchita", "no disponible"),
+new Propiedad("lote", 25000, 0, "venta", "Carlos Paz", "reservado"),
+new Propiedad("casa", 50000, "3", "alquiler", "Carlos Paz", "no disponible"),
+new Propiedad("departamento", 40000, "2", "alquiler", "Córdoba", "disponible")]
+
+
+//muestro las zonas disponibles de las propiedades que administro.
+document.write('ZONAS DISPONIBLES DE LAS PROPIEDADES QUE ADMINISTRAMOS:')
+document.write('<br>')
+
+const nuevo = arrayPropiedad.map(item => item.zona).filter((value, index, self) => self.indexOf(value) === index)
+
+nuevo.forEach(el => {
+    document.write(`<br> ${el}`)
+});
+
+// some() para saber y mostrar si tengo propiedades disponibles para alquilar (estado= disponibles)
+const estado = arrayPropiedad.some((prop)=> prop.estado == "disponible")
+console.log(estado)
+if(estado === true){
+      alert("Tenemos propiedades disponibles: Hacer consulta")
+} 
+else alert("Por el momento no contamos con propiedades disponibles")
+
+
+// con entradas, muestro las propiedades segun requiera
+
+const tipoOperacion = prompt("Ingrese operación a realizar VENTA-ALQUILER")
 
 if (tipoOperacion.toUpperCase() == "ALQUILER") {
-    let precioMensual = Number(prompt("Ingrese el costo mensual del alquiler"))
-    let comision = (precioMensual * 12) * 0.02
-    alert("El costo de comision inmobiliaria es del 2% anual, debe abonar $ " + comision)
+    const alquiler = arrayPropiedad.filter((prop) => prop.operacion == "alquiler")
+    console.log(alquiler)
+    const cantAmb = prompt("Ingrese la cantidad deseada de ambientes de la propiedad")
+    const ambientes = alquiler.filter((prop) => prop.cantAmbiente >= cantAmb)
+    console.log(ambientes)
+    const propDisponibles = ambientes.map((prop) =>{prop.tipo})
+    
+    alert("Las propiedades disponibles para alquiler: (se muestran por consola)")
+    console.log(propDisponibles)
 }
-else if (tipoOperacion.toUpperCase() == "COMPRA") {
-    let tipoInmueble = prompt("Indique tipo de inmueble TERRENO / CASA")
-    if (tipoInmueble.toUpperCase() == "TERRENO") {
-        let precio = Number(prompt("Indique costo de terreno en pesos argentinos"))
-        
-        let terreno = new Propiedad (precio)
-
-        alert("Los cargos de escritura es de $ " + terreno.escritura(precio))
-        alert("El costo de comision inmobiliaria es del 5%, debe abonar $ " + terreno.comision(precio , 0.05))
-
-    }
-    else if (tipoInmueble.toUpperCase() == "CASA") {
-        let precio = Number(prompt("Indique costo de la propiedad en pesos Argentino"))
-
-        let costoEscritura = Escritura(precio)
-
-        let comision = Comision(precio, 0.03)
-
-        alert("Los cargos de escritura es de $ " + costoEscritura)
-        alert("El costo de comision inmobiliaria es del 3%, debe abonar $ " + comision)
-
-    }
-    else { alert("Ingreso un dato incorrecto") }
+else if (tipoOperacion.toUpperCase() == "VENTA") {
+    const venta = arrayPropiedad.filter((prop) => prop.operacion == "venta")
+    console.log(venta)
+    const precioDesde = prompt("Ingrese precio base de la propiedad")
+    const proPrecio = venta.filter((prop) => prop.precio >= precioDesde)
+    
+    alert("Las propiedades disponibles para la venta: (se muestran por consola)")
+    console.log(proPrecio)
 }
-else {
-    alert("Ingreso un dato incorrecto")
-} 
+else alert("Ingreso un dato incorrecto")
 
 
-// let tipoInmueble = prompt("Indique tipo de inmueble TERRENO / CASA")
 
-    // if (tipoInmueble.toUpperCase() == "TERRENO") {
-    //     let precio = Number(prompt("Indique costo de terreno en pesos argentinos"))
 
-    //     let costoEscritura = Escritura(precio)
 
-    //     let comision = Comision(precio, 0.05)
 
-    //     alert("Los cargos de escritura es de $ " + costoEscritura)
-    //     alert("El costo de comision inmobiliaria es del 5%, debe abonar $ " + comision)
 
-    // }
-    // else if (tipoInmueble.toUpperCase() == "CASA") {
-    //     let precio = Number(prompt("Indique costo de la propiedad en pesos Argentino"))
 
-    //     let costoEscritura = Escritura(precio)
 
-    //     let comision = Comision(precio, 0.03)
 
-    //     alert("Los cargos de escritura es de $ " + costoEscritura)
-    //     alert("El costo de comision inmobiliaria es del 3%, debe abonar $ " + comision)
 
-    // }
-    // else { alert("Ingreso un dato incorrecto") }
