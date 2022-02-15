@@ -1,8 +1,8 @@
 header {
     background: rgba(250, 249, 249, 0);
     width: 100%;
-    position: fixed;
-    z-index: 100;
+    position: absolute;
+    z-index: 5
   }
 
 .logo {
@@ -19,3 +19,10 @@ header {
     }    
 }
 
+#ContPropiedades {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

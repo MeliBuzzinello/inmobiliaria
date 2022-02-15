@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -11,8 +12,8 @@
 header {
   background: rgba(250, 249, 249, 0);
   width: 100%;
-  position: fixed;
-  z-index: 100;
+  position: absolute;
+  z-index: 5;
 }
 
 .logo {
@@ -32,13 +33,116 @@ header {
   padding: 20px;
 }
 
-.card-img-top {
-  height: 300px;
+#ContPropiedades {
+  max-width: 1200px;
+  margin: 60px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.titulo {
-  margin: 30px;
+footer {
+  background-color: rgba(199, 199, 199, 0.644);
+  margin-top: 50px;
   text-align: center;
+}
+
+footer h5 {
+  margin-top: 15px;
+}
+
+footer h6 {
+  text-align: center;
+  background-color: rgba(247, 46, 196, 0.94);
+  margin: 0;
+  padding: 13px;
+}
+
+.redes_tamaño {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+
+.contenedorFooter {
+  padding: 40px;
+}
+
+.contacto__info {
+  padding-top: 50px;
+}
+
+#contenedorHijo {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 62px 55px 62px 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.subtitulo {
+  display: inline-block;
+}
+
+#formulario {
+  width: 100%;
+  text-align: center;
+}
+
+#btnEnviar {
+  height: 40px;
+  margin-top: 40px;
+}
+
+.estiloBtnOver {
+  background-color: #FFAEBC;
+}
+
+.estiloBtnOut {
+  background-color: #A0E7E5;
+}
+
+.estiloBtnClick {
+  background-color: yellow;
+}
+
+.estiloBtnMousedown {
+  background-color: #B4F8C8;
+}
+
+.estiloBtnOk {
+  background-color: rosybrown;
+}
+
+.estiloBtnError {
+  background-color: red;
+}
+
+.parrafoEnviadoOk {
+  color: green;
+}
+
+.parrafoEnviadoError {
+  color: #c0260b;
+}
+
+.contenedorHijo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parallax {
@@ -61,6 +165,32 @@ header {
   margin: 0%;
 }
 
+.buscadorTitulo {
+  color: #FFF;
+  font-size: 40px;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.selectCaja {
+  color: #000;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 5px;
+  height: 42px;
+  padding: 0 8px;
+  outline: none;
+}
+
+button {
+  background-color: rgba(247, 46, 196, 0.94);
+  width: 150px;
+}
+
 .contenedor_destacados {
   background: rgba(199, 199, 199, 0.644);
   padding: 30px 0 40px;
@@ -70,5 +200,46 @@ header {
 .destacadas {
   width: 90%;
   margin: 0 auto;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
+.titulo {
+  margin: 30px;
+  text-align: center;
+}
+
+.contenedorSimulador {
+  background-color: #868B8E;
+  color: #FFF;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.contSimHijo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contSim {
+  margin: 9px;
+  height: 42px;
+  padding: 0 8px;
+}
+
+.simuladorTitulo {
+  text-shadow: 2px 2px 2px black;
 }
 /*# sourceMappingURL=main.css.map */

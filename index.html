@@ -16,144 +16,127 @@
         <div class="col-lg-4 col-xs-12">
             <img class="logo" src="assets/img/LucreciaCohen-Isologotipo-Horizontal-Svg.svg" alt="Logo Lucrecia Cohen">
         </div>
-        <div class="col-lg-3"></div>
-        <div class="col-lg-5 col-xs-12 nav_flex">
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Servicios</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-toggle="dropdown" aria-expanded="false"> Propiedades
-
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Alquiler</a>
-                                <a class="dropdown-item" href="#">Compra</a>
-                                <a class="dropdown-item" href="#">Venta</a>
-                            </div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
     </header>
     <main>
-        <div class="row">
+        <div>
             <section class="parallax">
-
+                <div id="contenedorBuscador">
+                    <h3 class="buscadorTitulo">¿QUE PROPIEDAD BUSCAS?</h3>
+                    <div class="row contenedorHijo">
+                        <div class="col-lg-4 col-xs-12">
+                            <select class="selectCaja" id="selOperacion">
+                                <option value="-1">Tipo de operacion</option>
+                                <option value="venta">Venta</option>
+                                <option value="alquiler">Alquiler</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <select class="selectCaja" id="selTipoProp">
+                                <option value="-1">Tipo de propiedad</option>
+                                <option value="casa">Casa</option>
+                                <option value="departamento">Departamento</option>
+                                <option value="locales">Locales</option>
+                                <option value="terreno">Terreno</option>
+                                <option value="cochera">Cochera</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                            <button class="selectCaja" id="btnBuscar">Buscar</button>
+                        </div>
+                    </div>
+                </div> 
             </section>
         </div>
-        <!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/cerro-cruz-1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/201fbff7-e032-49a3-9ff0-dc253898921f.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/7e6adeb1-946c-4794-8331-17e2f676df9d.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions"
-                data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions"
-                data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
-        </div> -->
-        <div class="contenedor_destacados">
-            <div class="destacadas">
-                <div class="row prop_list">
-                    <h2 class="col-lg-12 col-xs-12 titulo">Propiedades Destacadas</h2>
-                </div>
+        <div id="ContTitulo"></div>
+        <div id="ContPropiedades"></div>
 
-                <div class="row row-cols-1 row-cols-md-2">
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="assets/img/destacada1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="assets/img/destacada2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="assets/img/destacada3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-4">
-                        <div class="card">
-                            <img src="assets/img/destacada4.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in
-                                    to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="contenedorSimulador">
+            <div class="simuladorTitulo">
+                <h3>SIMULADOR DE COSTOS</h3>
+                <h5>Comisión inmobiliaria y escritura</h5>
+            </div>
+            <div class="row contSimHijo">
+                <div class="col-lg-4 col-xs-12">
+                    <select class="contSim" id="selSimulador">
+                        <option value="-1">Tipo de operacion</option>
+                        <option value="1">Venta</option>
+                        <option value="2">Alquiler</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <input class="contSim" type="text" placeholder="Costo de la propiedad" id="txtSimulador">
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <button class="contSim" id="btnCalcular">CALCULAR</button>
                 </div>
             </div>
+            <div id="ContSimulador" ></div>
         </div>
     </main>
     <footer>
+        <div class="contenedorFooter">
+            <div class="row">
+                <div class="col-lg-8 col-xs-12">
+                    <div id="contenedor">
+                        <div id="contenedorHijo">
+                            <form id="formulario" action="">
+                                <h2>Ingrese sus datos de contacto</h2>
+                                <h4 class="subtitulo">Nombre</h4> <input id="txtNombre" type="text">
+                                <div id="icNombre"></div>
+                                </br>
+                                <h4 class="subtitulo">Telefono</h4> <input id="txtTelefono" type="text">
+                                <div id="DivNum"></div><br>
+                                <h4 class="subtitulo">Horarios de atencion</h4>
+                                <select name="" id="selectHorario">
+                                    <option value="select0"> </option>
+                                    <option value="select1">Turno mañana</option>
+                                    <option value="select2">Turno tarde</option>
+                                </select>
+                                <div id="DivHorario"></div>
+                                <button id="btnEnviar">ENVIAR</button>
+                                <div id="DivEnviado"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="contacto__info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                        </svg>
+                        <h5>Telefono: 3515332584</h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                        </svg>
+                        <h5>Email: creadigital_ok@gmail.com</h5>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                        </svg>
+                        <h5>Direcciónn: Rufino Cuervo 1130 Córdoba Argentina</h5>
+                        <div class="redes_ubicacion">
+                            <a href="https://www.facebook.com/Crea.SocialMediaDigital" target="_blank">
+                                <img class="redes_tamaño" src="assets/img/facebook.png" alt="facebook">
+                            </a>
+                            <a href="https://www.instagram.com/crea_serviciosdigitales/" target="_blank">
+                                <img class="redes_tamaño" src="assets/img/instagram.png" alt="instagram">
+                            </a>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-xs-12">
+                <h6>2021 Todos los derechos reservados. Politica de Privacidad.</h6>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -161,7 +144,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
-    <script src="js/simulador2.js"></script>
+    <!--     JAVASCRIPT    -->   
+    <script src="js/basededatos.js"></script>
+    <script src="js/buscador.js" ></script>
+    <script src="js/simulador.js" ></script>
+    <script src="js/form.js"></script>  
 </body>
 
 </html>

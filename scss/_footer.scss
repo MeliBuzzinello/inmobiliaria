@@ -1,1 +1,81 @@
 
+footer {
+    background-color: rgba(199, 199, 199, 0.644);
+    margin-top: 50px;
+    text-align: center;
+    h5 {
+        margin-top: 15px;
+    }
+    h6 {
+        text-align: center;
+        background-color: rgba(247, 46, 196, 0.94) ;
+        margin: 0;
+        padding: 13px;
+    }
+}
+
+.redes_tamaño {
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+}
+
+.contenedorFooter {
+    padding: 40px;
+}
+
+.contacto__info {
+    padding-top: 50px;
+}
+
+#contenedorHijo {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 62px 55px 62px 55px;
+    display: flex;
+}
+
+.subtitulo {
+    display: inline-block;
+}
+
+#formulario {
+    width: 100%;
+    text-align: center;
+}
+
+#btnEnviar {
+    height: 40px;
+    margin-top: 40px
+}
+
+.estiloBtnOver{
+    background-color: #FFAEBC;
+}
+.estiloBtnOut{
+    background-color: #A0E7E5;
+}
+
+.estiloBtnClick{
+    background-color: yellow;
+}
+
+.estiloBtnMousedown{
+    background-color: #B4F8C8;
+}
+
+.estiloBtnOk {
+    background-color: rosybrown;
+}
+
+.estiloBtnError {
+    background-color: red;
+}
+.parrafoEnviadoOk {
+    color: green;
+}
+
+.parrafoEnviadoError {
+    color: rgb(192, 38, 11);
+}
