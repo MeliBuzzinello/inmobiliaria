@@ -32,6 +32,8 @@ function recuperar() {
 }
 
 function Calcular(operacionFn, precioFn) {
+    console.log( precioFn || "Costo no definido");
+
 
     ContSimulador.innerHTML = "";
     if (operacionFn == "1") {
@@ -52,7 +54,13 @@ function Calcular(operacionFn, precioFn) {
         div.innerHTML = `<p>El costo de comision inmobiliaria es del 2% anual, debe abonar $ ${comision}</p>`
         ContSimulador.appendChild(div)
     }
-    else alert('No selecciono un tipo de operacion')
+    else {Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+    }
 
     localStorage.setItem('selectSeleccion', operacionFn);
     localStorage.setItem('txtResulSumulador', precioFn);
