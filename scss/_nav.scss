@@ -21,8 +21,47 @@ header {
 
 #ContPropiedades {
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 40px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.Titulopropiedad {
+    h3 {
+    color: rgb(158, 156, 156);
+    font-size: 40px;
+    line-height: 42px;
+    text-align: center;
+    padding-top: 40px;
+    }
+}
+
+.propiedad {
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    border: 1px solid rgba(182, 183, 183, 0.6);
+    height: 100%;
+    box-shadow: 8px 8px 6px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.imgPropiedades {
+    display: block;
+    width: 400px;
+    height: 300px;
+}
+
+.card-image {
+    text-align: center;
+}
+.card-title {    
+    text-transform: capitalize;
+    padding-top: 20px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+

@@ -7,26 +7,27 @@ const ContTitulo = document.getElementById('ContTitulo')
 //*-----------CODIGO A EJECUTAR ---------*/
 recuperar()
 
-
-
 /* ----------- FUNCIONES -------------*/
 
 function mostrarPropiedades(array) {
     ContPropiedades.innerHTML = '';
-    ContTitulo.innerHTML = '';
+    ContTitulo.innerHTML = '';    
 
     for (const prop of array) {
+
+        const {tipo, precio , operacion , zona , img} =  prop
+
         let div = document.createElement('div');
         div.className = 'propiedad';
         div.innerHTML = `<div class="card">
         <div class="card-image">
-            <img src=>
-            <span class="card-title">${prop.tipo}</span>
+            <img class="imgPropiedades" src=${img}>
+            <span class="card-title">${tipo}</span>
         </div>
         <div class="card-content">
-            <p>${prop.operacion}</p>
-            <p>Precio $: ${prop.precio}</p>
-            <p>Zona: ${prop.zona}</p>
+            <p>${operacion}</p>
+            <p>Precio $: ${precio}</p>
+            <p>Zona: ${zona}</p>
         </div>
     </div> `
         ContPropiedades.appendChild(div);
@@ -34,15 +35,9 @@ function mostrarPropiedades(array) {
 }
 
 function recuperar() {
-    let recuperarBuscador = JSON.parse(localStorage.getItem('propiedadesBuscador'))
-    if(recuperarBuscador){
-        recuperarBuscador.forEach(element => {
-            mostrarPropiedades(recuperarBuscador)
-        });
-    }
+    let recuperarBuscador = JSON.parse(localStorage.getItem('propiedadesBuscador')) 
+    recuperarBuscador && mostrarPropiedades(recuperarBuscador)
 }
-
-
 
 
 /* ------------- EVENTOS -------------- */
@@ -63,7 +58,7 @@ btnBuscar.addEventListener('click', () => {
     else {
         let div = document.createElement('div');
         div.className = 'Titulopropiedad';
-        div.innerHTML = `<h3>Propiedades disponibles</h3>`
+        div.innerHTML = `<h3>PROPIEDADES DISPONIBLES</h3>`
 
         ContTitulo.appendChild(div);
     }

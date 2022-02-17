@@ -59,11 +59,7 @@ function Calcular(operacionFn, precioFn) {
 
 }
 
-
-
 // ---------------------EVENTOS ------------------------------
-
-
 btnCalcular.addEventListener('click', () => {
     Calcular(selSimulador.value, txtSimulador.value)
 })

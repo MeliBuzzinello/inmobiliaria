@@ -17,11 +17,9 @@ recuperar()
 //---------------- FUNCIONES ------------------------------
 
 function recuperar() {
-    
-        txtNombre.value = localStorage.getItem('txtNombre')
-        txtTelefono.value = localStorage.getItem('txtTelefono')
-        selectHorario.value = localStorage.getItem('selectHorario')
-    
+    txtNombre.value = localStorage.getItem('txtNombre')
+    txtTelefono.value = localStorage.getItem('txtTelefono')
+    selectHorario.value = localStorage.getItem('selectHorario')
 }
 
 // ----------------EVENTOS ---------------------------------
@@ -43,9 +41,7 @@ txtNombre.addEventListener('change', () => {
 
 txtNombre.addEventListener('keypress', (e) => {
     const tecla = (document.all) ? e.keyCode : e.which
-    if (tecla == 13) {
-        alert('se presiona tecla ENTER')
-    }
+    tecla == 13 && alert('se presiona tecla ENTER')
 })
 
 //txTelefono
@@ -54,23 +50,16 @@ txtTelefono.addEventListener('change', () => {
     localStorage.setItem('txtTelefono', txtTelefono.value)
     let telefono = txtTelefono.value
     const iconoTel = document.createElement('div')
-    if (telefono.length != 10) {
-        iconoTel.innerHTML = `<img src="assets/img/borrar.png" width="16">`
+    if (telefono.length != 10) { iconoTel.innerHTML = `<img src="assets/img/borrar.png" width="16">` }
+    else { iconoTel.innerHTML = `<img src="assets/img/comprobado.png" width="16">` }
 
-    }
-    else {
-        iconoTel.innerHTML = `<img src="assets/img/comprobado.png" width="16">`
-    }
     DivNum.appendChild(iconoTel)
 })
 
 txtTelefono.addEventListener('keypress', (e) => {
     const tecla = (document.all) ? e.keyCode : e.which
 
-    if (tecla == 13) {
-
-        alert('se presiona tecla ENTER')
-    }
+    tecla == 13 && alert('se presiona tecla ENTER')
 })
 
 
@@ -79,18 +68,12 @@ selectHorario.addEventListener('change', () => {
 
     let divH = document.createElement('div')
 
-    if (selectHorario.value == "select1") {
+    if (selectHorario.value == "select1")
+     { divH.innerHTML = `<h4>Usted sera contactado en el horario de 8 a 13 hs</h4>` }
+    else { divH.innerHTML = `<i class="fa-solid fa-alarm-clock"></i><h4>Usted sera contactado en el horario de 13 a 19 hs</h4>` }
 
-        divH.innerHTML = `<h4>Usted sera contactado en el horario de 8 a 13 hs</h4>`
-    }
-    else {
-        divH.innerHTML = `<i class="fa-solid fa-alarm-clock"></i><h4>Usted sera contactado en el horario de 13 a 19 hs</h4>`
-    }
     DivHorario.appendChild(divH);
-    setTimeout(() => {
-        DivHorario.removeChild(divH
-        )
-    }, 3000);
+    setTimeout(() => { DivHorario.removeChild(divH) }, 3000)
     localStorage.setItem('selectHorario', selectHorario.value)
 })
 
@@ -100,7 +83,6 @@ miFormulario.addEventListener('submit', (e) => {
 
     if (!DivEnviado.hasChildNodes()) {
         let div = document.createElement('div');
-
         if (txtNombre.value == "" || txtTelefono.value == "") {
             div.className = 'parrafoEnviadoError';
             div.innerHTML = `<h5>Debe Completar los campos solicitados</h5>`
@@ -110,10 +92,7 @@ miFormulario.addEventListener('submit', (e) => {
             div.innerHTML = `<h5>Su información fue enviado correctamente</h5>`
         }
         DivEnviado.appendChild(div);
-        setTimeout(() => {
-            DivEnviado.removeChild(div)
-
-        }, 2000);
+        setTimeout(() => { DivEnviado.removeChild(div) }, 2000);
 
         txtNombre.value = ""
         txtTelefono.value = ""
