@@ -54,13 +54,12 @@ function Calcular(operacionFn, precioFn) {
         div.innerHTML = `<p>El costo de comision inmobiliaria es del 2% anual, debe abonar $ ${comision}</p>`
         ContSimulador.appendChild(div)
     }
-    else {Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<a href="">Why do I have this issue?</a>'
-      })
-    }
+    else swal({
+        title: "Error",
+        text: "No selecciono una operación",
+        icon: "error",
+        button: "Ok",
+      });
 
     localStorage.setItem('selectSeleccion', operacionFn);
     localStorage.setItem('txtResulSumulador', precioFn);
@@ -72,7 +71,19 @@ btnCalcular.addEventListener('click', () => {
     Calcular(selSimulador.value, txtSimulador.value)
 })
 
+// --------------- Funcion mapa ---------------
 
+function iniciarMap(){
+    var coord = {lat:-31.4121939 ,lng: -64.5697769};
+    var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 10,
+      center: coord
+    });
+    var marker = new google.maps.Marker({
+      position: coord,
+      map: map
+    });
+}
 
 
 
